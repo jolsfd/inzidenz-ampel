@@ -16,7 +16,7 @@ TEMPLATE_URL = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/servic
 
 PATH_TO_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache.json")
 
-RESTRICTIONS = [[50, "RED"], [10, "LIGHTYELLOW_EX"], [35, "LIGHTRED_EX"], [5, "GREEN"]]
+COLORS = [[50, "RED"], [10, "LIGHTYELLOW_EX"], [35, "LIGHTRED_EX"], [5, "GREEN"]]
 
 
 def bubbleSort(arr):
@@ -148,15 +148,13 @@ class Incidence:
         cases_per_100k_bl = data["cases7_bl_per_100k"]
         total_cases, total_deaths = data["cases"], data["deaths"]
 
-        # Restriction
+        # Color
         color_name = self.get_color(data["cases7_per_100k"])
+        color = getattr(Back, color_name)
 
         # Metadata
         location, bezirk, date = data["GEN"], data["BEZ"], data["last_update"]
         source = "RKI"
-
-        # Color
-        color = getattr(Back, color_name)
 
         print(
             Style.BRIGHT
@@ -186,7 +184,7 @@ class Incidence:
 
 
 def main():
-    incidence = Incidence(OBJECT_ID, PATH_TO_CACHE, TEMPLATE_URL, RESTRICTIONS)
+    incidence = Incidence(OBJECT_ID, PATH_TO_CACHE, TEMPLATE_URL, COLORS)
     data = incidence.load_data()
     incidence.show_data(data)
 
