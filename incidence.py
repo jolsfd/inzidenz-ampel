@@ -188,5 +188,5 @@ def main():
     data = incidence.load_data()
     incidence.show_data(data)
 
-
-main()
+if __name__ == '__main__':
+    main()
