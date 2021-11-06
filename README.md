@@ -27,7 +27,7 @@ You need to configure the OBJECT_ID in `incidence.py` for your district. You can
 ```python
 # Example for Berlin Mitte
 
-OBJECT_ID = "‎413"
+OBJECT_ID = "413"
 ```
 
 ## Run 
