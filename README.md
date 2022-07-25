@@ -1,4 +1,3 @@
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/jolsfd/inzidenz-ampel)
 [![License](https://img.shields.io/github/license/jolsfd/inzidenz-ampel.svg)](https://github.com/jolsfd/inzidenz-ampel/blob/main/LICENSE)
 
 # Inzidenz-Ampel
